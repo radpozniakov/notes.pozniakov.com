@@ -1,0 +1,19 @@
+{
+  "name": "notes.pozniakov.com",
+  "version": "1.0.0",
+  "description": "My notes on web, design, and other topics that interest me.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/radpozniakov/notes.pozniakov.com.git"
+  },
+  "author": "Rad Pozniakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radpozniakov/notes.pozniakov.com/issues"
+  },
+  "homepage": "https://github.com/radpozniakov/notes.pozniakov.com#readme"
+}
