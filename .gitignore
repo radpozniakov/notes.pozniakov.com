@@ -1,0 +1,20 @@
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore Node.js modules
+node_modules/
+
+# Ignore build output
+dist/
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore IntelliJ IDEA settings
+.idea/
+
+# Ignore environment files
+.env
+.env.local
+.env.development
+.env.production

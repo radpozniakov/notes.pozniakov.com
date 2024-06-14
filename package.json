@@ -4,7 +4,8 @@
   "description": "My notes on web, design, and other topics that interest me.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "eleventy --serve --quiet",
+    "build": "rm -rf dist && eleventy"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/radpozniakov/notes.pozniakov.com/issues"
   },
-  "homepage": "https://github.com/radpozniakov/notes.pozniakov.com#readme"
+  "homepage": "https://github.com/radpozniakov/notes.pozniakov.com#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "autoprefixer": "^10.4.19",
+    "html-minifier": "^4.0.0",
+    "js-yaml": "^4.1.0",
+    "postcss": "^8.4.38",
+    "postcss-csso": "^6.0.1",
+    "postcss-import": "^16.1.0"
+  }
 }
