@@ -1,0 +1,63 @@
+.home-page {
+  background-image: url('/assets/title-cover.svg');
+  flex: 1;
+  container-type: inline-size;
+  container-name: notes-container;
+}
+
+/* .home-page .align-container {
+} */
+
+.home-page__content {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.home-page__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.home-page__intro h1 {
+  font-size: 2.5em;
+}
+
+.home-page__intro p {
+  max-width: 50em;
+  line-height: 1.5em;
+  font-size: 1.125em;
+  line-height: 1.75em;
+}
+
+.home-page__note-cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr;
+  column-gap: 1.5em;
+  row-gap: 1.5em;
+}
+
+@container notes-container (min-width: 700px) {
+  .home-page__note-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home-page__intro h1 {
+    font-size: 3em;
+  }
+}
+
+@container notes-container (min-width: 1200px) {
+  .home-page__content {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    gap: 4em;
+  }
+
+  .home-page__intro h1 {
+    font-size: 3.5em;
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="view-transition" content="same-origin">
+    <link rel="stylesheet" href="/styles/index.css" />
+    <!--
+    <link rel="preload" href="/assets/fonts/FiraCode-Light.woff2" crossorigin="" as="font" type="font/woff2"><link rel="preload" href="/assets/fonts/Inter-Regular.woff2" crossorigin="" as="font" type="font/woff2"> -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/favicon/favicon-apple-touch.png">
+    <meta name="description" content="{{ description }}">
+    <!--
+    <link rel="manifest" href="/manifest.json"><link rel="canonical" href="https://pozniakov.com/"><link rel="me" href="https://www.instagram.com/radpozniakov/"><meta property="og:type" content="website"><meta property="og:title" content="{{ title }} | {{ siteData.myName}}"><meta property="og:description" content="{{ description }}"><meta property="og:url" content="https://pozniakov.com/"><meta property="og:image" content="/assets/img/covers/{{ cover }}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"> -->
+  </head>
+  <body class="page__body"> {% include 'header.njk' %}
+    <main class="home-page">
+      <div class="home-page__content align-container">
+
+        <div class="home-page__intro">
+          <h1>Rad's Notes</h1>
+          <p>Hey 👋. Welcome here. My name is Rodion I'm writing about thing that capted my attenstion. Very often i thin about web, design, compunication whuttre web and mucis. Some notes coulve usfeul and some note. Don’t consider it as surce ot thirh. Is like my geornue and discovery this wordls.</p>
+        </div>  
+
+         <div class="home-page__note-cards">
+          {% for note in siteData.notes %}
+            <a href="/notes/temperature-whirl-threejs" class="note-card">
+
+              <div class="note-card__section note-card__section--top">
+                <time class="note-card__time">{{ note.time}}</time>
+              </div>
+
+              <div class="note-card__section note-card__section--content">
+                <h3 class="note-card__title">{{note.title}}</h3>
+                <p class="note-card__description">{{note.description}}</p>
+              </div>
+
+              <div class="note-card__section note-card__section--tags">
+
+                <p class="note-card__tags tags">
+                  {% for tag in note.tags %}
+                    <span class="tags__item">{{tag}}</span>
+                  {% endfor %}
+                </p>
+                
+              </div>
+
+            </a> 
+          {% endfor %} 
+        </div>
+
+
+      </div>
+      
+    </main>
+    {% include 'footer.njk' %} 
+    {# {{ content | safe }} #} 
+  </body>
+</html>

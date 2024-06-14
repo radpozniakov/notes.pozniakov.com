@@ -1,0 +1,5 @@
+permalink: /
+layout: page.njk
+title: Rad's notes
+description: 'My notes about web, design and dev'
+# cover: intro.jpg
