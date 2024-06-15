@@ -5,6 +5,7 @@
   padding-bottom: 1.5em;
   container-type: inline-size;
   container-name: page-footer;
+  background-color: var(--bg-color);
 }
 
 .footer__container {
@@ -18,7 +19,7 @@
   font-size: 0.75em;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #505050;
+  color: var(--dimmed-color);
 }
 
 .footer__links-list {
@@ -32,7 +33,7 @@
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.5px;
-  color: #000;
+  color: var(--content-color);
 }
 
 .footer__link:hover {
