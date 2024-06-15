@@ -1,5 +1,6 @@
 .header {
   border-bottom: solid 1px var(--border-color);
+  background-color: var(--bg-color);
 }
 
 .header__container {
@@ -41,12 +42,12 @@
 }
 
 .header__logo-title {
-  color: #000000;
+  color: var(--content-color);
   font-size: 1.125em;
 }
 
 .header__logo-author-name {
-  color: #585858;
+  color: var(--dimmed-color);
   font-size: 0.75em;
   text-transform: uppercase;
 }
@@ -59,6 +60,13 @@
 .header__theme-control {
   display: flex;
   align-items: center;
+}
+
+.header__theme-control > button > svg > circle {
+  fill: var(--headline-color);
+}
+.header__theme-control > button > svg > path {
+  stroke: var(--headline-color);
 }
 
 .header__theme-control > button {
