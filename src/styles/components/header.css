@@ -42,7 +42,7 @@
 }
 
 .header__logo-title {
-  color: var(--content-color);
+  color: var(--headline-color);
   font-size: 1.125em;
 }
 

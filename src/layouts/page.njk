@@ -6,16 +6,24 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="view-transition" content="same-origin">
     <link rel="stylesheet" href="/styles/index.css" />
-    {# <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0" /> #}
 
-    <!--
-    <link rel="preload" href="/assets/fonts/FiraCode-Light.woff2" crossorigin="" as="font" type="font/woff2"><link rel="preload" href="/assets/fonts/Inter-Regular.woff2" crossorigin="" as="font" type="font/woff2"> -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff">
+	  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#292929">
+
+    <style media="(prefers-color-scheme: light)">
+      {{ 'src/styles/light.css' | css }}
+    </style>
+
+    <style media="(prefers-color-scheme: dark)">
+      {{ 'src/styles/dark.css' | css }}
+    </style>
+
     <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
     <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/assets/favicon/favicon-apple-touch.png">
     <meta name="description" content="{{ description }}">
-    <!--
-    <link rel="manifest" href="/manifest.json"><link rel="canonical" href="https://pozniakov.com/"><link rel="me" href="https://www.instagram.com/radpozniakov/"><meta property="og:type" content="website"><meta property="og:title" content="{{ title }} | {{ siteData.myName}}"><meta property="og:description" content="{{ description }}"><meta property="og:url" content="https://pozniakov.com/"><meta property="og:image" content="/assets/img/covers/{{ cover }}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"> -->
+    <script defer src="/scripts/index.js"></script>
+    
   </head>
   <body class="page__body"> {% include 'header.njk' %}
     <main class="home-page">

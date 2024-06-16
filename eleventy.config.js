@@ -1,10 +1,9 @@
 const fs = require('fs');
 const htmlMin = require('html-minifier');
 const yaml = require('js-yaml');
-const postcss = require('postcss');
-const postcssCsso = require('postcss-csso');
-const autoprefixer = require('autoprefixer');
-const postcssImport = require('postcss-import');
+const lightningcss = require('lightningcss');
+const packageJSON = require('./package.json');
+const esbuild = require('esbuild');
 
 module.exports = function (eleventyConfig) {
   const collections = {
@@ -32,7 +31,22 @@ module.exports = function (eleventyConfig) {
     return yaml.load(contents);
   });
 
-  const styles = ['./src/styles/index.css'];
+  const styles = [
+    './src/styles/index.css',
+    './src/styles/light.css',
+    './src/styles/dark.css',
+  ];
+
+  const processStyles = async (path) => {
+    return await lightningcss.bundle({
+      filename: path,
+      minify: true,
+      sourceMap: false,
+      targets: lightningcss.browserslistToTargets(packageJSON.browserslist),
+      include:
+        lightningcss.Features.MediaQueries | lightningcss.Features.Nesting,
+    });
+  };
 
   eleventyConfig.addTemplateFormats('css');
 
@@ -44,15 +58,37 @@ module.exports = function (eleventyConfig) {
       }
 
       return async () => {
-        let output = await postcss([
-          postcssImport,
-          autoprefixer,
-          //   postcssCsso,
-        ]).process(content, {
-          from: path,
+        let { code } = await processStyles(path);
+        return code;
+      };
+    },
+  });
+
+  eleventyConfig.addFilter('css', async (path) => {
+    let { code } = await processStyles(path);
+    return code;
+  });
+
+  // JavaScript
+  eleventyConfig.addTemplateFormats('js');
+
+  eleventyConfig.addExtension('js', {
+    outputFileExtension: 'js',
+    compile: async (content, path) => {
+      if (path !== './src/scripts/index.js') {
+        return;
+      }
+
+      return async () => {
+        let { outputFiles } = await esbuild.build({
+          target: 'es2020',
+          entryPoints: [path],
+          minify: true,
+          bundle: true,
+          write: false,
         });
 
-        return output.css;
+        return outputFiles[0].text;
       };
     },
   });
