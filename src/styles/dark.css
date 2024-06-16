@@ -1,0 +1,15 @@
+:root {
+  color-scheme: dark;
+  --dimmed-color: #9d9d9d;
+  --headline-color: #fff;
+  --text-color: #dddddd;
+  --bg-color: #0f0f0f;
+  --border-color: #3a3a3a;
+  --link-highlight-color: #0f0f0f;
+  --cover-pettern: url('/assets/title-cover-dark.svg');
+
+  --hover-color: #222222;
+  --active-color: #111111;
+  --card-bg-hover: #111111;
+  --card-shadow-color: rgb(15, 15, 15);
+}

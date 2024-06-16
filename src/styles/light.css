@@ -1,0 +1,15 @@
+:root {
+  color-scheme: light;
+  --dimmed-color: #9d9d9d;
+  --headline-color: hsl(0, 0%, 0%);
+  --text-color: #000000;
+  --bg-color: #ffffff;
+  --border-color: #e0e0e0;
+  --link-highlight-color: #e5e5e5;
+  --cover-pettern: url('/assets/title-cover.svg');
+
+  --hover-color: #f0f0f0;
+  --active-color: #e0e0e0;
+  --card-bg-hover: #fdfdfd;
+  --card-shadow-color: rgb(250, 250, 250);
+}

@@ -16,7 +16,7 @@
   gap: 1.5em;
 }
 .note-card:hover {
-  background-color: #111111;
+  background-color: var(--card-bg-hover);
 }
 .note-card:hover .note-card__title {
   text-decoration: underline;
