@@ -60,6 +60,7 @@
 .header__theme-control {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .header__theme-control > button > svg > circle {
@@ -83,4 +84,79 @@
 
 .header__theme-control > button:active {
   background-color: var(--active-color);
+}
+
+.header__theme-submenu {
+  position: absolute;
+  bottom: -130px;
+  right: -8px;
+  z-index: 1;
+}
+
+.header__theme-submenu[data-show='false'] {
+  display: none;
+}
+
+.header__theme-submenu[data-show='true'] {
+  display: flex;
+}
+
+.theme-menu {
+  width: 125px;
+  border-radius: 4px;
+  padding: 8px 6px;
+  list-style: none;
+  background-color: var(--bg-color);
+  border: solid 1px var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.theme-menu__item {
+  width: 100%;
+}
+.theme-menu__item--active .theme-menu__button {
+  /* border: solid 1px #ccc; */
+  background-color: var(--hover-color);
+}
+
+.theme-menu__button {
+  width: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75em;
+  padding: 6px 12px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  /* border-bottom: solid 1px #ccc; */
+}
+.theme-menu__button:hover {
+  background-color: var(--hover-color);
+}
+
+.theme-menu__button:active {
+  background-color: var(--active-color);
+}
+
+.theme-menu__icon {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+}
+.theme-menu__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--headline-color);
+  stroke: var(--headline-color);
+}
+.theme-menu__text {
+  color: var(--headline-color);
+}
+
+.theme-menu-button:hover {
+  background-color: #757575;
 }

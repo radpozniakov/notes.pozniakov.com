@@ -11,11 +11,41 @@ const darkTheme = document.querySelector(
   'meta[name=theme-color][media*=prefers-color-scheme][media*=dark]',
 );
 
+let showMenuStatus = false;
+
+const themeMenu = document.querySelector('.header__theme-submenu');
+
+// Select all buttons by the class
+const buttons = document.querySelectorAll('.theme-menu__button');
+
+// Function to handle the click event
+function handleButtonClick(event) {
+  const theme = this.getAttribute('data-theme');
+  switchMedia(theme);
+  showMenuStatus = false;
+  themeMenu.setAttribute('data-show', 'false');
+  saveScheme(theme);
+}
+
+// Add event listeners to each button
+buttons.forEach((button) => {
+  button.addEventListener('click', handleButtonClick);
+});
+
 const themeSwitcher = document.querySelector('.header__theme-control > button');
 
 function setupSwitcher() {
+  const scheme = getSavedScheme();
+  if (scheme) {
+    switchMedia(scheme);
+  }
   themeSwitcher.addEventListener('click', (event) => {
-    console.log('click theme switcher');
+    showMenuStatus = !showMenuStatus;
+    if (showMenuStatus) {
+      themeMenu.setAttribute('data-show', 'true');
+    } else {
+      themeMenu.setAttribute('data-show', 'false');
+    }
   });
 }
 
@@ -47,4 +77,3 @@ function saveScheme(scheme) {
 }
 
 setupSwitcher();
-// switchMedia('light');
