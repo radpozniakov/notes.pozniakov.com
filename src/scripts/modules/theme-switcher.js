@@ -10,15 +10,13 @@ const lightTheme = document.querySelector(
 const darkTheme = document.querySelector(
   'meta[name=theme-color][media*=prefers-color-scheme][media*=dark]',
 );
+const themeMenuItems = document.querySelectorAll('.theme-menu__item');
+const themeMenu = document.querySelector('.header__theme-submenu');
+const buttons = document.querySelectorAll('.theme-menu__button');
+const themeSwitcher = document.querySelector('.header__theme-control > button');
 
 let showMenuStatus = false;
 
-const themeMenu = document.querySelector('.header__theme-submenu');
-
-// Select all buttons by the class
-const buttons = document.querySelectorAll('.theme-menu__button');
-
-// Function to handle the click event
 function handleButtonClick(event) {
   const theme = this.getAttribute('data-theme');
   switchMedia(theme);
@@ -27,18 +25,17 @@ function handleButtonClick(event) {
   saveScheme(theme);
 }
 
-// Add event listeners to each button
-buttons.forEach((button) => {
-  button.addEventListener('click', handleButtonClick);
-});
-
-const themeSwitcher = document.querySelector('.header__theme-control > button');
-
 function setupSwitcher() {
   const scheme = getSavedScheme();
   if (scheme) {
     switchMedia(scheme);
   }
+
+  // Add event listeners to each button
+  buttons.forEach((button) => {
+    button.addEventListener('click', handleButtonClick);
+  });
+
   themeSwitcher.addEventListener('click', (event) => {
     showMenuStatus = !showMenuStatus;
     if (showMenuStatus) {
@@ -56,10 +53,21 @@ function switchMedia(scheme) {
   if (scheme === 'auto') {
     lightMedia = '(prefers-color-scheme: light)';
     darkMedia = '(prefers-color-scheme: dark)';
-  } else {
-    lightMedia = scheme === 'light' ? 'all' : 'not all';
-    darkMedia = scheme === 'dark' ? 'all' : 'not all';
+  } else if (scheme === 'light') {
+    lightMedia = 'all';
+    darkMedia = 'not all';
+  } else if (scheme === 'dark') {
+    lightMedia = 'not all';
+    darkMedia = 'all';
   }
+
+  themeMenuItems.forEach((item) => {
+    if (item.getAttribute('data-theme') === scheme) {
+      item.setAttribute('data-active', 'true');
+    } else {
+      item.setAttribute('data-active', 'false');
+    }
+  });
 
   lightStyle.media = lightMedia;
   darkStyle.media = darkMedia;

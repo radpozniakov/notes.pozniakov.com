@@ -115,7 +115,7 @@
 .theme-menu__item {
   width: 100%;
 }
-.theme-menu__item--active .theme-menu__button {
+.theme-menu__item[data-active='true'] .theme-menu__button {
   /* border: solid 1px #ccc; */
   background-color: var(--hover-color);
 }
