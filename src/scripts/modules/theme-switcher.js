@@ -10,10 +10,14 @@ const lightTheme = document.querySelector(
 const darkTheme = document.querySelector(
   'meta[name=theme-color][media*=prefers-color-scheme][media*=dark]',
 );
+
 const themeMenuItems = document.querySelectorAll('.theme-menu__item');
 const themeMenu = document.querySelector('.header__theme-submenu');
 const buttons = document.querySelectorAll('.theme-menu__button');
 const themeSwitcher = document.querySelector('.header__theme-control > button');
+const themeSwitcherIcon = document.querySelector(
+  '.header__theme-control > button > svg > use',
+);
 
 let showMenuStatus = false;
 
@@ -38,6 +42,8 @@ function setupSwitcher() {
 
   themeSwitcher.addEventListener('click', (event) => {
     showMenuStatus = !showMenuStatus;
+    console.log('themeSwitcherIcon', themeSwitcherIcon);
+
     if (showMenuStatus) {
       themeMenu.setAttribute('data-show', 'true');
     } else {
@@ -51,12 +57,24 @@ function switchMedia(scheme) {
   let darkMedia;
 
   if (scheme === 'auto') {
+    themeSwitcherIcon.setAttribute(
+      'xlink:href',
+      '/assets/img/theme-indicators.svg#Auto',
+    );
     lightMedia = '(prefers-color-scheme: light)';
     darkMedia = '(prefers-color-scheme: dark)';
   } else if (scheme === 'light') {
+    themeSwitcherIcon.setAttribute(
+      'xlink:href',
+      '/assets/img/theme-indicators.svg#Light',
+    );
     lightMedia = 'all';
     darkMedia = 'not all';
   } else if (scheme === 'dark') {
+    themeSwitcherIcon.setAttribute(
+      'xlink:href',
+      '/assets/img/theme-indicators.svg#Dark',
+    );
     lightMedia = 'not all';
     darkMedia = 'all';
   }
