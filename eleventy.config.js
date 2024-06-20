@@ -75,7 +75,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addExtension('js', {
     outputFileExtension: 'js',
     compile: async (content, path) => {
-      if (path !== './src/scripts/index.js') {
+      if (
+        path !== './src/scripts/index.js' &&
+        path !== './src/scripts/note.js'
+      ) {
         return;
       }
 

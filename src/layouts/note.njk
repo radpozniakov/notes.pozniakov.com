@@ -26,7 +26,8 @@
       {{ 'src/styles/dark.css' | css }}
     </style>
 
-    <script defer src="/scripts/index.js"></script>  
+    <script defer src="/scripts/note.js"></script>
+
   </head>
   <body class="page__body">
     {% include 'header.njk' %}
@@ -51,7 +52,7 @@
         <div class="note__container align-container">
           <div class="note__content">
             <p>HTML semantics is a nice idea, but does it really make a difference? There’s a huge gap between HTML spec’s good intentions and what browsers and screen readers are willing to implement. Writing semantic markup only because the good spec is a spec, and it is good, and it’s a spec is not the worst approach you can take, but it might lead you to HTMHell.</p>
-            <h2>Hide irrelevant parts of the timeline</h2>
+            <h2 id="intro">Intro</h2>
             <p>Web performance operates on the scale of milliseconds, so even if your performance recording is only a few seconds long, there are ample opportunities to lose your place.</p>
             <p>In Chrome 122, we added the ability to <a href="/docs/devtools/performance/reference#breadcrumbs">create breadcrumbs</a>. This feature lets you clamp the boundaries of the timeline so that you'll only be able to zoom or pan inside of an area of interest set by you. Constraining the timeline in this way can be especially useful if you're trying to <a href="https://web.dev/articles/manually-diagnose-slow-interactions-in-the-lab">debug responsiveness issues</a>, for example, so you can focus your attention on a single interaction or problematic long task.</p>
             <ol>
@@ -60,7 +61,7 @@
             <li>Repeat as needed to zoom in on a nested area of interest.</li>
             <li>Click the breadcrumbs to return to previous areas of interest or the full range of the timeline.</li>
             </ol>
-            <h2>Hide irrelevant parts of the flame chart</h2>
+            <h2 id="it-lasted-for-a-while">Hit lasted for a while</h2>
             <p>Analyzing main thread activity is no small feat. This part of the Performance panel is known as the <a href="/docs/devtools/performance/reference#flame-chart">flame chart</a>, because of how long and spindly the call stacks can become. In some extreme cases, these stacks can be so unwieldy that it's hard to make sense of the whole thing and focus on what you're trying to optimize.</p>
             <figure>
               <picture>
@@ -77,7 +78,7 @@
             <li><strong>Hide children</strong>: Prune the flame chart at the selected function, hiding all of its children.</li>
             <li><strong>Hide repeating children</strong>: Remove all instances of the selected function from the rest of the flame chart.</li>
             </ul>
-            <h3>Beginning in Chrome 124, you can customize exactly which entries in the flame chart to hide</h3>
+            <h3 id="hide-irrelevant-tracks">Beginning in Chrome 124, you can customize exactly which entries in the flame chart to hide</h3>
             <p>Analyzing main thread activity is no small feat. This part of the Performance panel is known as the <a href="/docs/devtools/performance/reference#flame-chart">flame chart</a>, because of how long and spindly the call stacks can become. In some extreme cases, these stacks can be so unwieldy that it's hard to make sense of the whole thing and focus on what you're trying to optimize.</p>
             <p>Beginning in Chrome 124, you can <a href="/docs/devtools/performance/reference#hide-func">customize exactly which entries in the flame chart to hide</a>, so you can focus on the most actionable information.</p>
 
@@ -87,15 +88,10 @@
           </div>
           <div class="note_navigation">
               <ul class="note_nav-list">
-                <li class="note_nav-item note_nav-item--active"><a class="note_nav-item-link" href="">Intro</a></li>
-                <li class="note_nav-item"><a class="note_nav-item-link" href=""><span>It lasted for a while</span></a></li>
-                <li class="note_nav-item"><a class="note_nav-item-link" href=""><span>Hide irrelevant tracks</span></a></li>
-                <li class="note_nav-item"><a class="note_nav-item-link" href=""><span>Wrapping up</span></a></li>
-                <li class="note_nav-item"><a class="note_nav-item-link" href=""><span>It lasted for a while</span></a></li>
-                <li class="note_nav-item"><a class="note_nav-item-link" href=""><span>Hide irrelevant tracks</span></a></li>
-                <li class="note_nav-item"><a class="note_nav-item-link" href=""><span>Wrapping up</span></a></li>
-                <li class="note_nav-item"><a class="note_nav-item-link" href=""><span>Hide irrelevant tracks</span></a></li>
-                <li class="note_nav-item"><a class="note_nav-item-link" href=""><span>Wrapping up</span></a></li>
+                <li class="note_nav-item note_nav-item--active"><a class="note_nav-item-link" href="/notes/temperature-whirl-threejs/#intro">Intro</a></li>
+                <li class="note_nav-item"><a class="note_nav-item-link" href="/notes/temperature-whirl-threejs/#it-lasted-for-a-while"><span>HIt lasted for a while</span></a></li>
+                <li class="note_nav-item"><a class="note_nav-item-link" href="/notes/temperature-whirl-threejs/#hide-irrelevant-tracks"><span>Hide irrelevant tracks</span></a></li>
+                <li class="note_nav-item"><a class="note_nav-item-link" href="/notes/temperature-whirl-threejs/#wrapping-up"><span>Wrapping up</span></a></li>
               </ul>
             </div>
         </div>
