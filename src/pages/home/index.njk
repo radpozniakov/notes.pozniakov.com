@@ -1,3 +1,28 @@
-<main class="main">
-  <h2>Rad's notes</h2>
+<main class="home-page">
+  <div class="home-page__content align-container">
+    <div class="home-page__intro">
+      <h1>{{intro.title}}</h1>
+      <p>{{intro.text}}</p>
+    </div> 
+    <div class="home-page__note-cards">
+      {% for note in siteData.notes %}
+        <a href="/notes/temperature-whirl-threejs" class="note-card">
+          <div class="note-card__section note-card__section--top">
+            <time class="note-card__time">{{ note.time}}</time>
+          </div>
+          <div class="note-card__section note-card__section--content">
+            <h3 class="note-card__title">{{note.title}}</h3>
+            <p class="note-card__description">{{note.description}}</p>
+          </div>
+          <div class="note-card__section note-card__section--tags">
+            <p class="note-card__tags tags">
+              {% for tag in note.tags %}
+                <span class="tags__item">{{tag}}</span>
+              {% endfor %}
+            </p>
+          </div>
+        </a> 
+      {% endfor %} 
+    </div>
+  </div>
 </main>

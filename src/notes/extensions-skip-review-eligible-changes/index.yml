@@ -1,0 +1,8 @@
+title: Skip review for eligible changes to extensions
+desc: We are excited to announce a new feature that will allow developers to skip the review process for eligible changes to Manifest V3 extensions using the Declarative Net Request API.
+date: 2024-09-26
+permalink: 'extensions-skip-review-eligible-changes.html'
+tags:
+  - JavaScript
+  - Chrome
+layout: note.njk

@@ -1,103 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ title }}</title>
-    <meta name="description" content="{{ description }}">
+---
+layout: page.njk
+---
 
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="view-transition" content="same-origin">
-    <link rel="stylesheet" href="/styles/index.css" />
-
-    
-    
-    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
-    <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/favicon/favicon-apple-touch.png">
-
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff">
-	  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#292929">
-
-    <style media="(prefers-color-scheme: light)">
-      {{ 'src/styles/light.css' | css }}
-    </style>
-
-    <style media="(prefers-color-scheme: dark)">
-      {{ 'src/styles/dark.css' | css }}
-    </style>
-
-    <script defer src="/scripts/note.js"></script>
-
-  </head>
-  <body class="page__body">
-    {% include 'header.njk' %}
-    <main class="page__content">
-      <section class="note">
-
-        <div class="title-cover">
-          <div class="title-cover__text-container align-container">
-
-            <h1 class="note__title">HTML semantics is a nice idea, but does it really make a difference</h1>
-
-            <time class="note__time" datetime="2024-01-08">January 8, 2024 </time>
-
-            <p class="note__tags tags">
-              <span class="tags__item">React</span>
-              <span class="tags__item">Three Js</span>
-            </p>
-
-          </div>
+<main class="page__content">
+  <section class="note">
+    <div class="title-cover">
+      <div class="title-cover__text-container align-container">
+        <h1 class="note__title">{{ title }}</h1>
+        <time class="note__time" datetime="2024-01-08">January 8, 2024 </time>
+        <p class="note__tags tags">
+          <span class="tags__item">React</span>
+          <span class="tags__item">Three Js</span>
+        </p>
+      </div>
+    </div>
+    <div class="note__container align-container">
+      <div class="note__content">
+         {{ content | safe }} 
+        <div class="note__outro">
+          <a class="note__back" href="/">Back to notes</a>
         </div>
-
-        <div class="note__container align-container">
-          <div class="note__content">
-            <p>HTML semantics is a nice idea, but does it really make a difference? There’s a huge gap between HTML spec’s good intentions and what browsers and screen readers are willing to implement. Writing semantic markup only because the good spec is a spec, and it is good, and it’s a spec is not the worst approach you can take, but it might lead you to HTMHell.</p>
-            <h2 id="intro">Intro</h2>
-            <p>Web performance operates on the scale of milliseconds, so even if your performance recording is only a few seconds long, there are ample opportunities to lose your place.</p>
-            <p>In Chrome 122, we added the ability to <a href="/docs/devtools/performance/reference#breadcrumbs">create breadcrumbs</a>. This feature lets you clamp the boundaries of the timeline so that you'll only be able to zoom or pan inside of an area of interest set by you. Constraining the timeline in this way can be especially useful if you're trying to <a href="https://web.dev/articles/manually-diagnose-slow-interactions-in-the-lab">debug responsiveness issues</a>, for example, so you can focus your attention on a single interaction or problematic long task.</p>
-            <ol>
-            <li>Zoom and pan the timeline to an area of interest.</li>
-            <li>Click the magnifying glass icon<span class="material-icons" aria-hidden="true" translate="no">zoom_in</span> in the timeline overview to clamp the timeline and set a breadcrumb.</li>
-            <li>Repeat as needed to zoom in on a nested area of interest.</li>
-            <li>Click the breadcrumbs to return to previous areas of interest or the full range of the timeline.</li>
-            </ol>
-            <h2 id="it-lasted-for-a-while">Hit lasted for a while</h2>
-            <p>Analyzing main thread activity is no small feat. This part of the Performance panel is known as the <a href="/docs/devtools/performance/reference#flame-chart">flame chart</a>, because of how long and spindly the call stacks can become. In some extreme cases, these stacks can be so unwieldy that it's hard to make sense of the whole thing and focus on what you're trying to optimize.</p>
-            <figure>
-              <picture>
-                <img decoding="async"loading="lazy"
-                  src="/assets/img/fonts.png"
-                  alt="Google Fonts main page with the “grotesk” as a search keyword and “The European Accessibility” as a sample."
-                  width="2384"
-                  height="1216">
-                  </picture>
-              </figure>
-            <p>Beginning in Chrome 124, you can <a href="/docs/devtools/performance/reference#hide-func">customize exactly which entries in the flame chart to hide</a>, so you can focus on the most actionable information.</p>
-            <ul>
-            <li><strong>Hide function</strong>: Remove the selected function from the flame chart. Its children will move up to appear immediately after its parent function.</li>
-            <li><strong>Hide children</strong>: Prune the flame chart at the selected function, hiding all of its children.</li>
-            <li><strong>Hide repeating children</strong>: Remove all instances of the selected function from the rest of the flame chart.</li>
-            </ul>
-            <h3 id="hide-irrelevant-tracks">Beginning in Chrome 124, you can customize exactly which entries in the flame chart to hide</h3>
-            <p>Analyzing main thread activity is no small feat. This part of the Performance panel is known as the <a href="/docs/devtools/performance/reference#flame-chart">flame chart</a>, because of how long and spindly the call stacks can become. In some extreme cases, these stacks can be so unwieldy that it's hard to make sense of the whole thing and focus on what you're trying to optimize.</p>
-            <p>Beginning in Chrome 124, you can <a href="/docs/devtools/performance/reference#hide-func">customize exactly which entries in the flame chart to hide</a>, so you can focus on the most actionable information.</p>
-
-            <div class="note__outro">
-              <a class="note__back" href="/">Back to notes</a>
-            </div>
-          </div>
-          <div class="note_navigation">
-              <ul class="note_nav-list">
-                <li class="note_nav-item note_nav-item--active"><a class="note_nav-item-link" href="/notes/temperature-whirl-threejs/#intro">Intro</a></li>
-                <li class="note_nav-item"><a class="note_nav-item-link" href="/notes/temperature-whirl-threejs/#it-lasted-for-a-while"><span>HIt lasted for a while</span></a></li>
-                <li class="note_nav-item"><a class="note_nav-item-link" href="/notes/temperature-whirl-threejs/#hide-irrelevant-tracks"><span>Hide irrelevant tracks</span></a></li>
-                <li class="note_nav-item"><a class="note_nav-item-link" href="/notes/temperature-whirl-threejs/#wrapping-up"><span>Wrapping up</span></a></li>
-              </ul>
-            </div>
+      </div>
+      <div class="note_navigation">
+          <ul class="note_nav-list">
+            <li class="note_nav-item note_nav-item--active"><a class="note_nav-item-link" href="/temperature-whirl-threejs#intro">Intro</a></li>
+            <li class="note_nav-item"><a class="note_nav-item-link" href="/temperature-whirl-threejs#it-lasted-for-a-while"><span>HIt lasted for a while</span></a></li>
+            <li class="note_nav-item"><a class="note_nav-item-link" href="/temperature-whirl-threejs#hide-irrelevant-tracks"><span>Hide irrelevant tracks</span></a></li>
+            <li class="note_nav-item"><a class="note_nav-item-link" href="/temperature-whirl-threejs#wrapping-up"><span>Wrapping up</span></a></li>
+          </ul>
         </div>
-        {% include 'footer.njk' %}
-      </section>
-      {# {{ content | safe }} #}
-    </main>
-  </body>
-</html>
+    </div>
+  </section>
+</main>
