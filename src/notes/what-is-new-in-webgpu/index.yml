@@ -1,0 +1,8 @@
+title: What's New in WebGPU (Chrome 126)
+desc: Increase maxTextureArrayLayers limit, buffer upload optimization for Vulkan backend, shader compilation time improvements, submitted command.
+date: 2024-09-26
+permalink: 'what-is-new-in-webgpu.html'
+tags:
+  - JavaScript
+  - Chrome
+layout: note.njk
