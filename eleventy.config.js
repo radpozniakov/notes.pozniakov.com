@@ -69,6 +69,15 @@ module.exports = function (eleventyConfig) {
     return code;
   });
 
+  eleventyConfig.addFilter('dump', (dumpData) => {
+    console.log('dumpData', dumpData);
+    // return value.toISOString().split('T')[0];
+  });
+
+  eleventyConfig.addFilter('dateISO', (value) => {
+    return value.toISOString().split('T')[0];
+  });
+
   // JavaScript
   eleventyConfig.addTemplateFormats('js');
 
