@@ -42,12 +42,12 @@
 }
 
 .header__logo-title {
-  color: var(--headline-color);
+  color: var(--headline-text-color);
   font-size: 1.125em;
 }
 
 .header__logo-author-name {
-  color: var(--dimmed-color);
+  color: var(--dimmed-text-color);
   font-size: 0.75em;
   text-transform: uppercase;
 }
@@ -73,8 +73,8 @@
   cursor: pointer;
 }
 .header__theme-control > button > svg {
-  fill: var(--headline-color);
-  stroke: var(--headline-color);
+  fill: var(--headline-text-color);
+  stroke: var(--headline-text-color);
   width: 1.25em;
   height: 1.25em;
   display: block;
@@ -149,11 +149,11 @@
 .theme-menu__icon svg {
   width: 1.25em;
   height: 1.25em;
-  fill: var(--headline-color);
-  stroke: var(--headline-color);
+  fill: var(--headline-text-color);
+  stroke: var(--headline-text-color);
 }
 .theme-menu__text {
-  color: var(--headline-color);
+  color: var(--headline-text-color);
 }
 
 .theme-menu-button:hover {

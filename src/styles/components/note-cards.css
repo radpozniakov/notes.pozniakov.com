@@ -1,0 +1,13 @@
+.note-cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr;
+  column-gap: 1.5em;
+  row-gap: 1.5em;
+}
+
+@container notes-container (min-width: 700px) {
+  .note-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

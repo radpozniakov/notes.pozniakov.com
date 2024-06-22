@@ -1,25 +1,9 @@
-{% macro notesList( notes ) %}
+{% from 'note-card.njk' import noteCard with context %}
 
-  <div class="home-page__note-cards">
+{% macro notesList( notes ) %}
+  <div class="note-cards">
     {% for note in notes %}
-      <!-- Debugging: Output the content of each note -->
-      <a href="{{note.data.page.url}}" class="note-card">
-        {# <pre> {{ note | dump }} </pre> #}
-        <div class="note-card__section note-card__section--top">
-          <time class="note-card__time">{{ note.data.date | dateISO }}</time>
-        </div>
-          <div class="note-card__section note-card__section--content">
-            <h3 class="note-card__title">{{note.data.title}}</h3>
-            <p class="note-card__description">{{note.data.desc}}</p>
-          </div>
-        <div class="note-card__section note-card__section--tags">
-        <p class="note-card__tags tags">
-          {% for tag in note.data.tags %}
-            <span class="tags__item">{{ tag }}</span>
-          {% endfor %}
-        </p>
-        </div>
-      </a>
+      {{ noteCard(note=note)}}
     {% endfor %}
   </div>
 {% endmacro %}

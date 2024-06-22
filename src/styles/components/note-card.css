@@ -31,7 +31,7 @@
   font-size: 0.75em;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--dimmed-color);
+  color: var(--dimmed-text-color);
 }
 
 .note-card__section--content {
@@ -47,7 +47,7 @@
   font-weight: 600;
   text-wrap: balance;
   line-height: 1.25em;
-  color: var(--headline-color);
+  color: var(--headline-text-color);
 }
 
 .note-card__description {
@@ -62,22 +62,22 @@
   display: flex;
 }
 
-@container note-card-container (min-width: 500px) {
-  .note-card__section:not(:nth-child(1)) {
-    /* padding-top: 1.5em;
+/* @container note-card-container (min-width: 500px) { */
+/* .note-card__section:not(:nth-child(1)) { */
+/* padding-top: 1.5em;
     padding-bottom: 1.5em;
     padding-left: 1.75em;
     padding-right: 1.75em; */
-  }
-  .note-card__time {
-    /* padding-right: calc(1.75em + 0.5em);
+/* } */
+/* .note-card__time { */
+/* padding-right: calc(1.75em + 0.5em);
     padding-left: calc(1.75em + 0.5em);
     padding-top: 1.5em;
     padding-bottom: 1.5em; */
 
-    /* padding-top: 1.5em;
+/* padding-top: 1.5em;
     padding-bottom: 1.5em;
     padding-left: 1.75em;
     padding-right: 1.75em; */
-  }
-}
+/* }
+} */

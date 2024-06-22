@@ -18,6 +18,20 @@ The performance gain mentioned in this post is a progressive enhancement that yo
 
 Check out the demo of this feature on Glitch. The source code shows the concept from the previous code snippet in action. Be sure to carefully follow the instructions in the demo. If you inspect the IDB instances with Chrome DevTools, you can see the used storage bucket in the section Bucket name, highlighted with a red box in the following screenshot.
 
+### Hide irrelevant tracks
+
+Check out the demo of this feature on Glitch. The source code shows the concept from the previous code snippet in action. Be sure to carefully follow the instructions in the demo. If you inspect the IDB instances with Chrome DevTools, you can see the used storage bucket in the section Bucket name, highlighted with a red box in the following screenshot.
+
+Check out the demo of this feature on Glitch. The source code shows the concept from the previous code snippet in action. Be sure to carefully follow the instructions in the demo. If you inspect the IDB instances with Chrome DevTools, you can see the used storage bucket in the section Bucket name, highlighted with a red box in the following screenshot.
+
+Check out the demo of this feature on Glitch. The source code shows the concept from the previous code snippet in action. Be sure to carefully follow the instructions in the demo. If you inspect the IDB instances with Chrome DevTools, you can see the used storage bucket in the section Bucket name, highlighted with a red box in the following screenshot.
+
+Check out the demo of this feature on Glitch. The source code shows the concept from the previous code snippet in action. Be sure to carefully follow the instructions in the demo. If you inspect the IDB instances with Chrome DevTools, you can see the used storage bucket in the section Bucket name, highlighted with a red box in the following screenshot.
+
+Check out the demo of this feature on Glitch. The source code shows the concept from the previous code snippet in action. Be sure to carefully follow the instructions in the demo. If you inspect the IDB instances with Chrome DevTools, you can see the used storage bucket in the section Bucket name, highlighted with a red box in the following screenshot.
+
+Check out the demo of this feature on Glitch. The source code shows the concept from the previous code snippet in action. Be sure to carefully follow the instructions in the demo. If you inspect the IDB instances with Chrome DevTools, you can see the used storage bucket in the section Bucket name, highlighted with a red box in the following screenshot.
+
 ### Related links
 
 - [Not all storage is created equal: introducing Storage Buckets]()

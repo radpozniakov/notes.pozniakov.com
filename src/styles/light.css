@@ -1,7 +1,7 @@
 :root {
   color-scheme: light;
-  --dimmed-color: #9d9d9d;
-  --headline-color: hsl(0, 0%, 0%);
+  --dimmed-text-color: #585858;
+  --headline-text-color: hsl(0, 0%, 0%);
   --text-color: #000000;
   --bg-color: #ffffff;
   --border-color: #e0e0e0;
