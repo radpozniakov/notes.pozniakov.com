@@ -19,7 +19,7 @@
   font-size: 0.75em;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--dimmed-color);
+  color: var(--dimmed-text-color);
 }
 
 .footer__links-list {

@@ -1,21 +1,21 @@
 ---
 layout: page.njk
 ---
-
 <main class="page__content">
   <section class="note">
     <div class="title-cover">
       <div class="title-cover__text-container align-container">
         <h1 class="note__title">{{ title }}</h1>
-        <time class="note__time" datetime="2024-01-08">January 8, 2024 </time>
+        <time class="note__time" datetime="{{ date | dateToLocale('long')}}">{{ date | dateToLocale('long')}}</time>
         <p class="note__tags tags">
-          <span class="tags__item">React</span>
-          <span class="tags__item">Three Js</span>
+          {% for tag in tags %}
+            <span class="tags__item">{{ tag }}</span>
+          {% endfor %}
         </p>
       </div>
     </div>
     <div class="note__container align-container">
-      <div class="note__content">
+      <div id="note__content" class="note__content">
          {{ content | safe }} 
         <div class="note__outro">
           <a class="note__back" href="/">Back to notes</a>
@@ -23,10 +23,11 @@ layout: page.njk
       </div>
       <div class="note_navigation">
           <ul class="note_nav-list">
-            <li class="note_nav-item note_nav-item--active"><a class="note_nav-item-link" href="/temperature-whirl-threejs#intro">Intro</a></li>
-            <li class="note_nav-item"><a class="note_nav-item-link" href="/temperature-whirl-threejs#it-lasted-for-a-while"><span>HIt lasted for a while</span></a></li>
-            <li class="note_nav-item"><a class="note_nav-item-link" href="/temperature-whirl-threejs#hide-irrelevant-tracks"><span>Hide irrelevant tracks</span></a></li>
-            <li class="note_nav-item"><a class="note_nav-item-link" href="/temperature-whirl-threejs#wrapping-up"><span>Wrapping up</span></a></li>
+            {% for tap in taps %}
+              <li class="note_nav-item">
+                <a class="note_nav-item-link" href="#{{ tap.title | slugify }}">{{ tap.title }}</a>
+              </li>
+            {% endfor %}
           </ul>
         </div>
     </div>

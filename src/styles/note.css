@@ -75,7 +75,7 @@
   font-size: 2.25em;
   line-height: 1.2em;
   order: 2;
-  color: var(--headline-color);
+  color: var(--headline-text-color);
 }
 
 .note__container {
@@ -97,7 +97,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--headline-color);
+  color: var(--headline-text-color);
 }
 
 .note__content p,
@@ -176,7 +176,7 @@ li {
 }
 
 .tags__item {
-  color: var(--dimmed-color);
+  color: var(--dimmed-text-color);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-size: 1em;
@@ -188,7 +188,7 @@ li {
   font-size: 1em;
   letter-spacing: 0.5px;
   order: 3;
-  color: var(--dimmed-color);
+  color: var(--dimmed-text-color);
 }
 .note__outro {
   padding-top: 3em;
