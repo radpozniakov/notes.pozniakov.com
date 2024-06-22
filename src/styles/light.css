@@ -1,5 +1,6 @@
 :root {
   color-scheme: light;
+  --logo-color: #000;
   --dimmed-text-color: #585858;
   --headline-text-color: hsl(0, 0%, 0%);
   --text-color: #000000;
