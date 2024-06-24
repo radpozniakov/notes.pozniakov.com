@@ -12,7 +12,6 @@
   box-shadow: 0px 0px 6px 2px var(--card-shadow-color);
   padding: 1.5em;
   gap: 1.5em;
-  /* overflow: hidden; */
 }
 
 .note-card::after {
@@ -45,9 +44,7 @@
 
 .note-card__section .note-card__time {
   display: block;
-  font-size: 0.75em;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 1em;
   color: var(--dimmed-text-color);
 }
 
@@ -63,13 +60,13 @@
   font-size: 1.5em;
   font-weight: 600;
   text-wrap: balance;
-  line-height: 1.5em;
+  line-height: 1.375em;
   color: var(--headline-text-color);
 }
 
 .note-card__description {
   font-size: 1.125em;
-  line-height: 1.75em;
+  line-height: 1.625em;
   color: var(--text-color);
 }
 
@@ -77,24 +74,6 @@
   gap: 0.75em;
   font-size: 0.75em;
   display: flex;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-
-/* @container note-card-container (min-width: 500px) { */
-/* .note-card__section:not(:nth-child(1)) { */
-/* padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    padding-left: 1.75em;
-    padding-right: 1.75em; */
-/* } */
-/* .note-card__time { */
-/* padding-right: calc(1.75em + 0.5em);
-    padding-left: calc(1.75em + 0.5em);
-    padding-top: 1.5em;
-    padding-bottom: 1.5em; */
-
-/* padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    padding-left: 1.75em;
-    padding-right: 1.75em; */
-/* }
-} */

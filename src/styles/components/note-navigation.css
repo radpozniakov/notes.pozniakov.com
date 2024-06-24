@@ -6,15 +6,14 @@
   width: 15em;
 }
 
-.note_nav-item--active .note_nav-item-link {
-  font-weight: 600;
-}
-
 .note_nav-item-link {
   font-size: 1em;
   line-height: 1em;
   color: var(--content-color);
   text-decoration: none;
+}
+.note_nav-item-link[data-active='true'] {
+  font-weight: 600;
 }
 
 .note_nav-item-link:hover {

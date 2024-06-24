@@ -32,7 +32,7 @@ layout: page.njk
           <ul class="note_nav-list">
             {% for tap in taps %}
               <li class="note_nav-item">
-                <a class="note_nav-item-link" href="#{{ tap.title | slugify }}">{{ tap.title }}</a>
+                <a class="note_nav-item-link" data-active="false" href="#{{ tap.title | slugify }}">{{ tap.title }}</a>
               </li>
             {% endfor %}
           </ul>
