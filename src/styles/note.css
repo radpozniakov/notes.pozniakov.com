@@ -104,7 +104,7 @@ ol {
 .note__content p {
   hyphens: auto;
   margin: 0;
-  font-size: 1em;
+  font-size: 1.125em;
   color: var(--text-color);
 }
 
@@ -139,7 +139,7 @@ ol {
 
 .note__content p,
 li {
-  line-height: 1.5em;
+  line-height: 1.625em;
 }
 
 .note_navigation {
@@ -154,16 +154,11 @@ li {
 
 .tags__item {
   color: var(--dimmed-text-color);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
   font-size: 1em;
-  letter-spacing: 0.5px;
 }
 
 .note__time {
-  text-transform: uppercase;
   font-size: 1em;
-  letter-spacing: 0.5px;
   order: 3;
   color: var(--dimmed-text-color);
 }
@@ -188,7 +183,6 @@ a.note__back-link:hover {
   width: 1em;
   height: 0.6875em;
   fill: var(--headline-text-color);
-  /* stroke: var(--headline-text-color); */
 }
 
 @container note-container (min-width: 700px) {
@@ -199,7 +193,7 @@ a.note__back-link:hover {
 
   .tags__item,
   .note__time {
-    font-size: 1em;
+    font-size: 1.125em;
   }
   .note__title {
     font-size: 3.5em;
